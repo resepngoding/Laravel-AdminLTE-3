@@ -1,32 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard 2</title>
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{ asset('backend/plugins/fontawesome-free/css/all.min.css') }}">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="{{ asset('backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('backend/dist/css/adminlte.min.css') }}">
-  @livewireStyles()
+    <x-partials.head/>
+ <livewire:styles/>
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-dark">
-    @include('layouts.partials.navbar')
+    <x-partials.navbar/>
   </nav>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-  @include('layouts.partials.sidebar')
+  <x-partials.sidebar/>
     <!-- /.sidebar -->
   </aside>
 
@@ -53,7 +42,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        @yield('content')
+        {{ $slot }}
       </div><!--/. container-fluid -->
     </section>
     <!-- /.content -->
@@ -62,16 +51,16 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    @include('layouts.partials.footer')
+    <x-partials.footer/>
   </footer>
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-@include('layouts.partials.required-scripts')
+<x-partials.required-scripts/>
 
 @stack('js')
 
-@livewireScripts()
+<livewire:scripts>
 </body>
 </html>

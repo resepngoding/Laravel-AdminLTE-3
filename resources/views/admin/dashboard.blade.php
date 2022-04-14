@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<x-app-layout>
 
 @section('title', 'Dashboard')
 
@@ -31,5 +31,4 @@
   </div>
   <!-- /.row -->
 
- <!-- /.row -->
-@endsection
+</x-app-layout>
